@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView android:layout_width ="match_parent" 
+        android:layout_height="wrap_content" 
+        android:text="@string/crime_title_label" 
+        style ="?android:listSeparatorTextViewStyle" 
+        /> 
+    
+    <EditText android:id="@+id/crime_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/crime_title_hint" 
+        />
+    
+    <TextView android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:text="@string/crime_details_label" 
+        style="?android:listSeparatorTextViewStyle" 
+        /> 
+        <!-- This style makes the text field look like a list seperator. It's part of the app's theme, a theme is simply a collection of styles -->
+    
+    <Button android:id="@+id/crime_date" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="16dp" 
+        android:layout_marginRight="16dp" 
+        /> 
+        <!-- Note: Margins specify the distances between views, and padding specifies the distance between a view’s outside edges and its content. -->
+        
+    <CheckBox android:id="@+id/crime_solved" 
+        android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:layout_marginLeft="16dp" 
+        android:layout_marginRight="16dp" 
+        android:text="@string/crime_solved_label" 
+        /> 
+
+</LinearLayout>
+
+<!-- dp (or dip) Short for density-independent pixel and usually pronounced “dip.” You typically use this for margins, padding, or anything else for which 
+you would otherwise specify size with a pixel value. When your display is a higher density, density-independent pixels will expand to fill a larger number 
+of screen pixels. One dp is always 1/160th of an inch on a device’s screen. You get the same size regardless of screen density. -->
+
+<!-- sp Short for scale-independent pixel. Scale-independent pixels are density-independent pixels that also take into account the user’s font size preference. 
+You will almost always use sp to set display text size. -->
+
+<!-- Notice that for your margins, you use a 16dp value for the margins. This value follows Android’s “48dp rhythm” design guideline. You can find all of Android 
+design guidelines at http:// developer.android.com/ design/ index.html. Modern Android apps should follow these guidelines as closely as possible. -->
+
+<!-- Attributes whose names do not begin with layout_ are directions to the widget. When it is inflated, the widget calls a method to configure itself based on 
+each of these attributes and their values. When an attribute’s name begins with layout_, that attribute is a direction to that widget’s parent. These attributes 
+are known as layout parameters, and they tell the parent layout how to arrange the child element within the parent. -->

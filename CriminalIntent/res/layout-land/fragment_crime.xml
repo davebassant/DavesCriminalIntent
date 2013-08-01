@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+    <TextView android:layout_width ="match_parent" 
+        android:layout_height="wrap_content" 
+        android:text="@string/crime_title_label" 
+        style ="?android:listSeparatorTextViewStyle" 
+        /> 
+    
+    <EditText android:id="@+id/crime_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/crime_title_hint" 
+        />
+    
+    <TextView android:layout_width="match_parent" 
+        android:layout_height="wrap_content" 
+        android:text="@string/crime_details_label" 
+        style="?android:listSeparatorTextViewStyle" 
+        /> 
+        <!-- This style makes the text field look like a list seperator. It's part of the app's theme, a theme is simply a collection of styles -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp" >
+
+        <Button
+            android:id="@+id/crime_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5" />
+        
+        <!-- To determine the width of its child views, LinearLayout uses a mixture of the layout_width and layout_weight parameters. -->
+        <!-- LinearLayout makes two passes to set the width of a view. In the first pass, LinearLayout looks at layout_width (or layout_height, 
+        for vertical orientation). The value for layout_width for both the Button and CheckBox is now wrap_content, so each view will get only 
+        enough space to draw itself -->
+        <!-- In the next pass, LinearLayout allocates any extra space based on the values for layout_weight. Because we have set both to have a 
+        width of 0.5, LinearLayout split the extra space 50/50. -->
+        <!-- What if you want the LinearLayout to allocate exactly 50% of its width to each view? You simply skip the first pass by setting the 
+        layout_width of each widget to 0dp instead of wrap_content. This leaves layout_weight the sole component in the LinearLayout’s decision-making -->
+
+        <CheckBox
+            android:id="@+id/crime_solved"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/crime_solved_label" />
+
+    </LinearLayout> 
+        <!-- Note: Margins specify the distances between views, and padding specifies the distance between a view’s outside edges and its content. --> 
+
+</LinearLayout>
+
+<!-- dp (or dip) Short for density-independent pixel and usually pronounced “dip.” You typically use this for margins, padding, or anything else for which 
+you would otherwise specify size with a pixel value. When your display is a higher density, density-independent pixels will expand to fill a larger number 
+of screen pixels. One dp is always 1/160th of an inch on a device’s screen. You get the same size regardless of screen density. -->
+
+<!-- sp Short for scale-independent pixel. Scale-independent pixels are density-independent pixels that also take into account the user’s font size preference. 
+You will almost always use sp to set display text size. -->
+
+<!-- Notice that for your margins, you use a 16dp value for the margins. This value follows Android’s “48dp rhythm” design guideline. You can find all of Android 
+design guidelines at http:// developer.android.com/ design/ index.html. Modern Android apps should follow these guidelines as closely as possible. -->
+
+<!-- Attributes whose names do not begin with layout_ are directions to the widget. When it is inflated, the widget calls a method to configure itself based on 
+each of these attributes and their values. When an attribute’s name begins with layout_, that attribute is a direction to that widget’s parent. These attributes 
+are known as layout parameters, and they tell the parent layout how to arrange the child element within the parent. -->
